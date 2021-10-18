@@ -19,5 +19,5 @@ from whatsapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('message', views.index),
+    path('message', views.message),
 ]

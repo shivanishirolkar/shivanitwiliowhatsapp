@@ -9,7 +9,7 @@ from .weather import get_weather, generate_weather_message
 from django.conf import settings
 
 @csrf_exempt
-def index(request):
+def message(request):
 
     if request.method == 'POST':
 
