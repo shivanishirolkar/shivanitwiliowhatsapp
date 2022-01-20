@@ -2,23 +2,16 @@ import calendar
 from datetime import datetime
 import requests
 
-
-def get_weather(lat, lon, api_key):
-    weather_response = requests.get(
-        f"https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=hourly&appid={api_key}&units=imperial").json()
-    return weather_response
-
-
-def generate_weather_message(weather_response):
+def generate_weather_message(weather_request):
     current_weather = {
-        "temperature": int(weather_response["current"]["temp"]),
-        "day_of_week": calendar.day_name[datetime.fromtimestamp(weather_response["current"]["dt"]).weekday()],
-        "description": weather_response["current"]["weather"][0]["description"],
-        "main": weather_response["current"]["weather"][0]["main"]
+        "temperature": int(weather_request["current"]["temp"]),
+        "day_of_week": calendar.day_name[datetime.fromtimestamp(weather_request["current"]["dt"]).weekday()],
+        "description": weather_request["current"]["weather"][0]["description"],
+        "main": weather_request["current"]["weather"][0]["main"]
     }
 
     forecast_messages = []
-    for daily_weather in weather_response["daily"]:
+    for daily_weather in weather_request["daily"]:
         max_temp = daily_weather["temp"]["max"]
         min_temp = daily_weather["temp"]["min"]
         weekday = calendar.day_name[datetime.fromtimestamp(daily_weather["dt"]).weekday()]
@@ -35,3 +28,9 @@ def generate_weather_message(weather_response):
                    f"{forecast_messages}"
 
     return message
+
+def get_weather(lat, lon, api_key):
+    weather_request = requests.get(
+        f"https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=hourly&appid={api_key}&units=imperial").json()
+    print(weather_request)
+    return weather_request
