@@ -17,6 +17,7 @@ OPEN_WEATHER_API_KEY = os.getenv("OPEN_WEATHER_API_KEY")
 TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
 TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +25,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4h9x3vod3#4^+(%zf80z68n#p7vm5lfuti2s7m&=!tk!!3!ati'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
