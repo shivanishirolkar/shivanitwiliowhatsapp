@@ -20,8 +20,6 @@ kiwisolver==1.2.0
 linecache2==1.0.0
 MarkupSafe==1.1.1
 matplotlib==3.2.1
-numpy==1.18.3
-pandas==1.0.3
 parse==1.14.0
 parse-type==0.5.2
 pprint==0.1
