@@ -1,5 +1,5 @@
 # shivanitwiliowhatsapp
-This is a project I am using to play around with the WhatsApp Business API from Twilio. I created a simple chatbot in Python using the Django web framework. It is equipped to receive and handle WhatsApp messages depending on the keywords they contain.
+This is a project I am using to play around with the Twilio API for WhatsApp. I created a simple chatbot in Python using the Django web framework. It is equipped to receive and handle WhatsApp messages depending on the keywords they contain.
 
 ## Prerequisites
 1. Python 3.6 or newer
